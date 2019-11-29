@@ -8,6 +8,7 @@ refactoring is done by hand.
 Incorporate this code into your project, be sure to add this to the git repository. *
 List how this code could cause problems, and how these problems would 
 manifest themselves in the application at runtime. *
+
 This code could cause problems as it doesn’t currently follow a defensive programming approach. 
 Every class and method should be solely responsible for its own correctness and robustness.
 This is currently not the case
@@ -22,6 +23,7 @@ Even impossible conditions must be accounted for
 method. This allows the implementation of the private mutator to be changed without affecting the client 
 5.	provide an accessor method to allow the client to see number of samples
 Refactor the code to prevent or identify these problems using a defensive 
+
 programming approach. Be sure to note these changes in your git repository. *
 
 Exercise 2: Exceptions
@@ -30,6 +32,7 @@ Modify the custom exception IllegalRainfallDataSourceException to
 include exception chaining. *
  Is there any opportunity for a programmatic introspection interface for this exception? If so refactor
 IllegalRainfallDataSourceException to include it. *
+
 Yes
 
 Be sure to note these changes in your git repository. *
@@ -39,6 +42,7 @@ Exercise 3: Documenting the APIs
 Document your APIs using Javadoc comments. What level of Javadoc comments are
 necessary? Consider the cases of a developer using the PredictionRainfall API and the
 PredictionDataSource API.
+
 Javadoc comments are more like documentation than traditional comments. Any method or class that will be used by anyone aside from the
 developer requires Javadoc detailed comments in order to avoid confusion and time spent translating code
 However in this case the client would be using the application and therefore the application should be heavily documented 
@@ -46,12 +50,14 @@ However in this case the client would be using the application and therefore the
 Is there a need to define any other custom exceptions to support the
 RainfallDataSource or RainfallPrediction APIs? If so define these exceptions. Be
 sure to note these exception classes in your git repository.
+
 No
 
 Exercise 4: Testing
 
 This code did not use a test-driven development approach. Comment on whether you
 think this is a weakness and where TDD could have benefited the development process.
+
 I think this a weakness.
 Main benefits of TDD are that every method is tested as the program is developed and errors are corrected. 
 There are many parts of the code that could cause problems at runtime as I mentioned above in my answer to defensive programming. 
