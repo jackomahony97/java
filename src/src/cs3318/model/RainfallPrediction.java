@@ -1,6 +1,7 @@
-package cs3318.model;
+package model;
 
-import cs3318.datastore.RainfallDataSource;
+import datastore.RainfallDataSource;
+import exceptions.IllegalRainfallDataSourceException;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -8,9 +9,17 @@ import java.util.Objects;
 public abstract class RainfallPrediction {
     protected RainfallDataSource data;
 
-    public RainfallPrediction(RainfallDataSource source) {
+    /**
+     * Validation for source
+     * @param source
+     */
+    public RainfallPrediction(RainfallDataSource source) throws IllegalArgumentException{
         Objects.requireNonNull(source);
-        this.data = source;
+        try {
+            this.data = source;
+        } catch (IllegalArgumentException e){
+            throw new IllegalArgumentException();
+        }
     }
 
     public abstract Double predict(LocalDate date);
