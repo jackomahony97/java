@@ -1,11 +1,22 @@
-package cs3318.application;
+package application;
 
-import cs3318.datastore.RainfallDataSource;
-import cs3318.datastore.RainfallDataSourceCSV;
-import cs3318.datastore.RainfallDataSourceRandom;
-import cs3318.exceptions.IllegalRainfallDataSourceException;
+import datastore.RainfallDataSource;
+import datastore.RainfallDataSourceCSV;
+import datastore.RainfallDataSourceRandom;
+import exceptions.IllegalRainfallDataSourceException;
 
+import java.io.FileNotFoundException;
+
+/**
+ * Predict rainfall of Cork Airport. CSV file as file input
+ * Prints date and percipitation to terminal
+ */
 public class PredictRainfall {
+    /**
+     *
+     * @param args
+     * @throws IllegalRainfallDataSourceException
+     */
     public static void main(String [] args) throws IllegalRainfallDataSourceException {
         RainfallDataSource corkAirport;
 
@@ -14,8 +25,11 @@ public class PredictRainfall {
         }
         catch (IllegalRainfallDataSourceException e) {
             corkAirport = new RainfallDataSourceRandom("Cork Airport (dummy)");
+            throw new IllegalRainfallDataSourceException("Problem with file");
         }
-
+        /**
+         * Print to terminal
+         */
         corkAirport.getRecordingDates().forEach(System.out::println);
         corkAirport.getPrecipitation().forEach(System.out::println);
     }
