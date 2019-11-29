@@ -1,6 +1,7 @@
 # java
 CA CS3318
 Exercise 1: Refactoring
+
 Refactoring is changing the structure of a program without changing it functionality. 
 Refactoring must be performed carefully as errors can be introduced, especially when 
 refactoring is done by hand.
@@ -17,12 +18,14 @@ This can cause problems at runtime if the method is passed a parameter that is l
 This can cause problems at runtime if the method is passed a parameter that is legal by type but which the method cannot work with
 3.	use assertions to detect impossible conditions
 Even impossible conditions must be accounted for
-4.	provide safe mutator method. For optimum safety mutators methods should have a public method which validates and then calls a private method. This allows the implementation of the private mutator to be changed without affecting the client 
+4.	provide safe mutator method. For optimum safety mutators methods should have a public method which validates and then calls a private
+method. This allows the implementation of the private mutator to be changed without affecting the client 
 5.	provide an accessor method to allow the client to see number of samples
 Refactor the code to prevent or identify these problems using a defensive 
 programming approach. Be sure to note these changes in your git repository. *
 
 Exercise 2: Exceptions
+
 Modify the custom exception IllegalRainfallDataSourceException to
 include exception chaining. *
  Is there any opportunity for a programmatic introspection interface for this exception? If so refactor
@@ -32,10 +35,12 @@ Yes
 Be sure to note these changes in your git repository. *
 
 Exercise 3: Documenting the APIs
+
 Document your APIs using Javadoc comments. What level of Javadoc comments are
 necessary? Consider the cases of a developer using the PredictionRainfall API and the
 PredictionDataSource API.
-Javadoc comments are more like documentation than traditional comments. Any method or class that will be used by anyone aside from the developer requires Javadoc detailed comments in order to avoid confusion and time spent translating code
+Javadoc comments are more like documentation than traditional comments. Any method or class that will be used by anyone aside from the
+developer requires Javadoc detailed comments in order to avoid confusion and time spent translating code
 However in this case the client would be using the application and therefore the application should be heavily documented 
 
 Is there a need to define any other custom exceptions to support the
@@ -44,7 +49,13 @@ sure to note these exception classes in your git repository.
 No
 
 Exercise 4: Testing
+
 This code did not use a test-driven development approach. Comment on whether you
 think this is a weakness and where TDD could have benefited the development process.
 I think this a weakness.
-Main benefits of TDD are that every method is tested as the program is developed and errors are corrected. There are many parts of the code that could cause problems at runtime as I mentioned above in my answer to defensive programming. Many of the problems associated with this code not following a defensive programming approach could have been resolved during development if TDD had been implemented and had been followed. For example, with regard to mutator methods the code has no validation of the data the client uses. This could cause problems at runtime in the form of errors. Exceptions for improper data entry should be implemented. TDD also creates a detailed spec which is something this 
+Main benefits of TDD are that every method is tested as the program is developed and errors are corrected. 
+There are many parts of the code that could cause problems at runtime as I mentioned above in my answer to defensive programming. 
+Many of the problems associated with this code not following a defensive programming approach could have been resolved during
+development if TDD had been implemented and had been followed. For example, with regard to mutator methods the code has no validation of
+the data the client uses. This could cause problems at runtime in the form of errors. Exceptions for improper data entry should be 
+implemented. TDD also creates a detailed spec which is something this 
