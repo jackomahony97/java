@@ -1,5 +1,5 @@
 # java
-CA CS3318
+Continuous Assesment for module CS3318
 Exercise 1: Refactoring
 
 Refactoring is changing the structure of a program without changing it functionality. 
